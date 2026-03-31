@@ -60,7 +60,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Page Title */}
-      <section className="bg-dark-bg pt-28 pb-24">
+      <section className="bg-dark-bg pt-28 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-cn-serif text-4xl md:text-5xl text-white">
             联系我们
@@ -72,9 +72,9 @@ export default function ContactPage() {
       </section>
 
       {/* WhatsApp Hero CTA */}
-      <section className="bg-surface">
+      <section className="bg-surface pt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-primary-teal to-primary-dark py-12 rounded-2xl mx-auto max-w-4xl -mt-8 relative z-10 text-center text-white shadow-xl px-6">
+          <div className="bg-gradient-to-r from-primary-teal to-primary-dark py-12 rounded-2xl mx-auto max-w-4xl relative z-10 text-center text-white shadow-xl px-6">
             <h2 className="font-cn-serif text-2xl md:text-3xl mb-2">
               WhatsApp 联系我们
             </h2>
