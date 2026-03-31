@@ -46,7 +46,7 @@ export function WhatsAppFAB() {
 
   return (
     <motion.div
-      className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3"
+      className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-2 sm:gap-3"
       initial={{ y: 80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" as const }}
@@ -74,7 +74,7 @@ export function WhatsAppFAB() {
             )}
 
             <span
-              className="relative flex items-center justify-center w-12 h-12 rounded-full text-white shadow-lg transition-shadow duration-300"
+              className={`relative flex items-center justify-center rounded-full text-white shadow-lg transition-shadow duration-300 ${link.ping ? "w-12 h-12" : "w-10 h-10 sm:w-12 sm:h-12"}`}
               style={{
                 backgroundColor: link.color,
                 boxShadow: `0 4px 14px ${link.color}33`,

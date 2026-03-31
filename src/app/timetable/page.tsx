@@ -112,7 +112,7 @@ export default function TimetablePage() {
                             <span className="block text-xs opacity-70">
                               {slot.subjectEN}
                             </span>
-                            <span className="block text-[10px] opacity-50 mt-0.5">
+                            <span className="block text-xs opacity-50 mt-0.5">
                               {slot.time}
                             </span>
                           </div>
@@ -163,7 +163,7 @@ export default function TimetablePage() {
                           <span className="block text-xs opacity-70">
                             {slot.subjectEN}
                           </span>
-                          <span className="block text-[10px] opacity-50 mt-0.5">
+                          <span className="block text-xs opacity-50 mt-0.5">
                             {slot.time}
                           </span>
                         </div>

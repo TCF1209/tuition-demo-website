@@ -94,7 +94,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setMobileOpen(true)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-text-primary hover:text-primary-teal md:hidden"
+              className="inline-flex items-center justify-center rounded-md p-2.5 text-text-primary hover:text-primary-teal md:hidden"
               aria-label="Open menu"
             >
               <svg

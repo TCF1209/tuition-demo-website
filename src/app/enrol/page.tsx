@@ -149,7 +149,7 @@ export default function EnrolPage() {
                       type="checkbox"
                       checked={selectedSubjects.includes(`${s.nameCN} ${s.nameEN}`)}
                       onChange={() => toggleSubject(`${s.nameCN} ${s.nameEN}`)}
-                      className="accent-primary-teal w-4 h-4"
+                      className="accent-primary-teal w-5 h-5"
                     />
                     {s.nameCN} {s.nameEN}
                   </label>
@@ -172,7 +172,7 @@ export default function EnrolPage() {
                           type="checkbox"
                           checked={selectedSubjects.includes(`${s.nameCN} ${s.nameEN}`)}
                           onChange={() => toggleSubject(`${s.nameCN} ${s.nameEN}`)}
-                          className="accent-primary-teal w-4 h-4"
+                          className="accent-primary-teal w-5 h-5"
                         />
                         {s.nameCN} {s.nameEN}
                       </label>
@@ -197,7 +197,7 @@ export default function EnrolPage() {
                           type="checkbox"
                           checked={selectedSubjects.includes(`${s.nameCN} ${s.nameEN}`)}
                           onChange={() => toggleSubject(`${s.nameCN} ${s.nameEN}`)}
-                          className="accent-primary-teal w-4 h-4"
+                          className="accent-primary-teal w-5 h-5"
                         />
                         {s.nameCN} {s.nameEN}
                       </label>
