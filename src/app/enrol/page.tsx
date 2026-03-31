@@ -13,12 +13,11 @@ export default function EnrolPage() {
   const [contact, setContact] = useState("");
   const [remarks, setRemarks] = useState("");
 
-  const lowerSubjects = SUBJECTS.filter(
-    (s) => s.level === "lower" || s.level === "both"
-  );
-  const upperSubjects = SUBJECTS.filter(
-    (s) => s.level === "upper" || s.level === "both"
-  );
+  // Subjects only in lower (level === "lower"), only in upper (level === "upper"),
+  // and shared (level === "both") — shown once under a "共同科目" section
+  const sharedSubjects = SUBJECTS.filter((s) => s.level === "both");
+  const lowerOnly = SUBJECTS.filter((s) => s.level === "lower");
+  const upperOnly = SUBJECTS.filter((s) => s.level === "upper");
 
   function toggleSubject(subjectLabel: string) {
     setSelectedSubjects((prev) =>
@@ -136,24 +135,20 @@ export default function EnrolPage() {
             <div className="mb-6">
               <span className={labelClass}>科目 Subject(s)</span>
 
-              {/* Lower Secondary */}
+              {/* Shared subjects (初中 & 高中) */}
               <p className="font-heading text-xs font-semibold text-text-muted uppercase tracking-wide mt-3 mb-2">
-                初中 Lower Secondary
+                共同科目 Common Subjects
               </p>
               <div className="grid grid-cols-2 gap-2 mb-4">
-                {lowerSubjects.map((s) => (
+                {sharedSubjects.map((s) => (
                   <label
-                    key={`lower-${s.nameEN}`}
+                    key={`shared-${s.nameEN}`}
                     className="flex items-center gap-2 cursor-pointer text-sm font-sans"
                   >
                     <input
                       type="checkbox"
-                      checked={selectedSubjects.includes(
-                        `${s.nameCN} ${s.nameEN}`
-                      )}
-                      onChange={() =>
-                        toggleSubject(`${s.nameCN} ${s.nameEN}`)
-                      }
+                      checked={selectedSubjects.includes(`${s.nameCN} ${s.nameEN}`)}
+                      onChange={() => toggleSubject(`${s.nameCN} ${s.nameEN}`)}
                       className="accent-primary-teal w-4 h-4"
                     />
                     {s.nameCN} {s.nameEN}
@@ -161,30 +156,55 @@ export default function EnrolPage() {
                 ))}
               </div>
 
-              {/* Upper Secondary */}
-              <p className="font-heading text-xs font-semibold text-text-muted uppercase tracking-wide mb-2">
-                高中 Upper Secondary
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {upperSubjects.map((s) => (
-                  <label
-                    key={`upper-${s.nameEN}`}
-                    className="flex items-center gap-2 cursor-pointer text-sm font-sans"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={selectedSubjects.includes(
-                        `${s.nameCN} ${s.nameEN}`
-                      )}
-                      onChange={() =>
-                        toggleSubject(`${s.nameCN} ${s.nameEN}`)
-                      }
-                      className="accent-primary-teal w-4 h-4"
-                    />
-                    {s.nameCN} {s.nameEN}
-                  </label>
-                ))}
-              </div>
+              {/* Upper-only subjects */}
+              {upperOnly.length > 0 && (
+                <>
+                  <p className="font-heading text-xs font-semibold text-text-muted uppercase tracking-wide mb-2">
+                    高中专属科目 Senior Only
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {upperOnly.map((s) => (
+                      <label
+                        key={`upper-${s.nameEN}`}
+                        className="flex items-center gap-2 cursor-pointer text-sm font-sans"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={selectedSubjects.includes(`${s.nameCN} ${s.nameEN}`)}
+                          onChange={() => toggleSubject(`${s.nameCN} ${s.nameEN}`)}
+                          className="accent-primary-teal w-4 h-4"
+                        />
+                        {s.nameCN} {s.nameEN}
+                      </label>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {/* Lower-only subjects (currently none, but future-proof) */}
+              {lowerOnly.length > 0 && (
+                <>
+                  <p className="font-heading text-xs font-semibold text-text-muted uppercase tracking-wide mt-4 mb-2">
+                    初中专属科目 Junior Only
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {lowerOnly.map((s) => (
+                      <label
+                        key={`lower-${s.nameEN}`}
+                        className="flex items-center gap-2 cursor-pointer text-sm font-sans"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={selectedSubjects.includes(`${s.nameCN} ${s.nameEN}`)}
+                          onChange={() => toggleSubject(`${s.nameCN} ${s.nameEN}`)}
+                          className="accent-primary-teal w-4 h-4"
+                        />
+                        {s.nameCN} {s.nameEN}
+                      </label>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
 
             {/* 4. Parent Contact */}
