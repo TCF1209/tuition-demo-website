@@ -1,8 +1,9 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import Image from "next/image";
+import { X } from "lucide-react";
 import { TEACHERS, type Teacher } from "@/lib/constants";
 
 function TeacherCard({
@@ -10,11 +11,13 @@ function TeacherCard({
   index,
   isExpanded,
   onToggle,
+  onPhotoClick,
 }: {
   teacher: Teacher;
   index: number;
   isExpanded: boolean;
   onToggle: () => void;
+  onPhotoClick: () => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
@@ -31,7 +34,8 @@ function TeacherCard({
       {/* Avatar */}
       <motion.div
         whileHover={{ scale: 1.05 }}
-        className="w-20 h-20 mx-auto rounded-full mb-4 ring-4 ring-primary-teal/20 transition-shadow hover:ring-primary-teal/40 overflow-hidden"
+        onClick={teacher.image ? onPhotoClick : undefined}
+        className={`w-20 h-20 mx-auto rounded-full mb-4 ring-4 ring-primary-teal/20 transition-shadow hover:ring-primary-teal/40 overflow-hidden ${teacher.image ? "cursor-pointer" : ""}`}
       >
         {teacher.image ? (
           <Image
@@ -109,6 +113,7 @@ function TeacherCard({
 
 export default function TeachersPage() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
+  const [lightbox, setLightbox] = useState<{ image: string; name: string } | null>(null);
 
   const handleToggle = (index: number) => {
     setExpandedId((prev) => (prev === index ? null : index));
@@ -142,11 +147,51 @@ export default function TeachersPage() {
                 index={i}
                 isExpanded={expandedId === i}
                 onToggle={() => handleToggle(i)}
+                onPhotoClick={() => teacher.image && setLightbox({ image: teacher.image, name: teacher.nameCN })}
               />
             ))}
           </div>
         </div>
       </section>
+      {/* Photo Lightbox */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+            onClick={() => setLightbox(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              className="relative max-w-sm w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setLightbox(null)}
+                className="absolute -top-3 -right-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-lg text-text-primary hover:bg-gray-100 cursor-pointer"
+                aria-label="Close"
+              >
+                <X className="w-4 h-4" />
+              </button>
+              <Image
+                src={lightbox.image}
+                alt={lightbox.name}
+                width={400}
+                height={400}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
+              <p className="text-center text-white font-heading font-semibold mt-4 text-lg">
+                {lightbox.name}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
