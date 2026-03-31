@@ -57,8 +57,8 @@ function AnimatedStat({ valueCN, labelCN, labelEN }: (typeof STATS)[number]) {
 
 export function StatsBar() {
   return (
-    <section className="w-full bg-primary-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <section className="relative z-10 -mt-10 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto bg-primary-dark rounded-2xl shadow-xl py-10 px-6 sm:px-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {STATS.map((stat) => (
             <AnimatedStat key={stat.valueCN} {...stat} />
