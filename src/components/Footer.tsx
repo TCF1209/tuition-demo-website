@@ -58,25 +58,27 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <span className="font-medium text-gray-300">Email:</span>{" "}
+                <span className="font-medium text-gray-300">电话 Phone:</span>{" "}
                 <a
-                  href="mailto:info@mhlearning.com"
+                  href="tel:+60174896983"
                   className="transition-colors hover:text-white"
                 >
-                  info@mhlearning.com
+                  017-489 6983
                 </a>
               </li>
               <li>
                 <span className="font-medium text-gray-300">地址 Address:</span>
                 <br />
-                123 Jalan Contoh, Taman Placeholder, 12345 Kuala Lumpur
+                14A, Jalan Bayu Tinggi 1C, Taman Bayu Perdana, 41200 Klang, Selangor
               </li>
               <li>
                 <span className="font-medium text-gray-300">营业时间 Hours:</span>
                 <br />
-                Mon–Fri: 14:00–21:30
+                Mon–Fri: 3:00 PM – 10:00 PM
                 <br />
-                Sat–Sun: 09:00–17:30
+                Sat: 9:00 AM – 4:00 PM
+                <br />
+                Sun: Closed
               </li>
             </ul>
           </div>

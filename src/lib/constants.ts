@@ -1,5 +1,4 @@
-// TODO: replace WHATSAPP_NUMBER with real number
-export const WHATSAPP_NUMBER = "60XXXXXXXXX";
+export const WHATSAPP_NUMBER = "60174896983";
 
 export const CENTRE = {
   nameEN: "MH Learning Centre",
@@ -240,8 +239,8 @@ export const TIMETABLE: TimetableSlot[] = [
 export const STATS = [
   { valueCN: "500+", labelCN: "学生", labelEN: "Students" },
   { valueCN: "8", labelCN: "位老师", labelEN: "Teachers" },
-  { valueCN: "14", labelCN: "科目", labelEN: "Subjects" },
-  { valueCN: "5年", labelCN: "教学经验", labelEN: "Years Experience" },
+  { valueCN: "5.0", labelCN: "Google 评分", labelEN: "Google Rating" },
+  { valueCN: "71", labelCN: "条好评", labelEN: "Google Reviews" },
 ];
 
 export const LEVELS = [

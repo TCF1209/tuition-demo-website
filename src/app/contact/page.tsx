@@ -9,38 +9,37 @@ const INFO_CARDS = [
     icon: "📍",
     titleCN: "地址",
     titleEN: "Address",
-    content: "No. XX, Jalan XXX, Taman XXX, XXXXX City, State",
+    content: "14A, Jalan Bayu Tinggi 1C, Taman Bayu Perdana, 41200 Klang, Selangor",
   },
   {
     icon: "🕐",
     titleCN: "营业时间",
     titleEN: "Hours",
-    content: "Mon\u2013Fri: 14:00\u201321:30 | Sat\u2013Sun: 09:00\u201317:30",
+    content: "Mon\u2013Fri: 3 PM\u201310 PM | Sat: 9 AM\u20134 PM | Sun: Closed",
   },
   {
     icon: "📱",
-    titleCN: "WhatsApp",
-    titleEN: "WhatsApp",
-    content: WHATSAPP_NUMBER,
+    titleCN: "电话 / WhatsApp",
+    titleEN: "Phone / WhatsApp",
+    content: "017-489 6983",
     href: `https://wa.me/${WHATSAPP_NUMBER}`,
   },
   {
-    icon: "📧",
-    titleCN: "电邮",
-    titleEN: "Email",
-    content: "info@mhlearning.com",
-    href: "mailto:info@mhlearning.com",
+    icon: "⭐",
+    titleCN: "Google 评价",
+    titleEN: "Google Reviews",
+    content: "5.0 \u2b50 (71 条评价 · 71 reviews)",
   },
 ];
 
 const HOURS = [
-  { dayCN: "星期一", dayEN: "Monday", time: "14:00\u201321:30" },
-  { dayCN: "星期二", dayEN: "Tuesday", time: "14:00\u201321:30" },
-  { dayCN: "星期三", dayEN: "Wednesday", time: "14:00\u201321:30" },
-  { dayCN: "星期四", dayEN: "Thursday", time: "14:00\u201321:30" },
-  { dayCN: "星期五", dayEN: "Friday", time: "14:00\u201321:30" },
-  { dayCN: "星期六", dayEN: "Saturday", time: "09:00\u201317:30" },
-  { dayCN: "星期日", dayEN: "Sunday", time: "09:00\u201317:30" },
+  { dayCN: "星期一", dayEN: "Monday", time: "3:00 PM \u2013 10:00 PM" },
+  { dayCN: "星期二", dayEN: "Tuesday", time: "3:00 PM \u2013 10:00 PM" },
+  { dayCN: "星期三", dayEN: "Wednesday", time: "3:00 PM \u2013 10:00 PM" },
+  { dayCN: "星期四", dayEN: "Thursday", time: "3:00 PM \u2013 10:00 PM" },
+  { dayCN: "星期五", dayEN: "Friday", time: "3:00 PM \u2013 10:00 PM" },
+  { dayCN: "星期六", dayEN: "Saturday", time: "9:00 AM \u2013 4:00 PM" },
+  { dayCN: "星期日", dayEN: "Sunday", time: "休息 Closed" },
 ];
 
 const cardVariants = {
@@ -132,13 +131,19 @@ export default function ContactPage() {
             ))}
           </div>
 
-          {/* Google Maps Placeholder */}
-          {/* TODO: replace with actual Google Maps iframe */}
+          {/* Google Maps */}
           <div className="max-w-4xl mx-auto mt-10">
-            <div className="bg-gray-200 rounded-xl h-64 md:h-80 flex items-center justify-center text-text-muted">
-              <span className="font-sans text-sm">
-                Google Maps · 地图将在此显示
-              </span>
+            <div className="rounded-xl overflow-hidden h-64 md:h-80">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.4!2d101.4!3d3.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTRBLCBKYWxhbiBCYXl1IFRpbmdnaSAxQywgVGFtYW4gQmF5dSBQZXJkYW5hLCA0MTIwMCBLbGFuZw!5e0!3m2!1sen!2smy!4v1"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="MH Learning Centre Location"
+              />
             </div>
           </div>
 
