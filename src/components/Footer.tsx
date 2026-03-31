@@ -40,47 +40,41 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Contact Info + Hours */}
+          {/* Column 3: Branches */}
           <div>
             <h3 className="font-heading text-lg font-semibold text-white">
-              联系我们 · Contact
+              上课地点 · Our Campuses
             </h3>
-            <ul className="mt-4 space-y-3 text-sm text-gray-400">
-              <li>
-                <span className="font-medium text-gray-300">WhatsApp:</span>{" "}
-                <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-white"
-                >
-                  {WHATSAPP_NUMBER}
-                </a>
-              </li>
-              <li>
-                <span className="font-medium text-gray-300">电话 Phone:</span>{" "}
-                <a
-                  href="tel:+60174896983"
-                  className="transition-colors hover:text-white"
-                >
-                  017-489 6983
-                </a>
-              </li>
-              <li>
-                <span className="font-medium text-gray-300">地址 Address:</span>
-                <br />
-                14A, Jalan Bayu Tinggi 1C, Taman Bayu Perdana, 41200 Klang, Selangor
-              </li>
-              <li>
-                <span className="font-medium text-gray-300">营业时间 Hours:</span>
-                <br />
-                Mon–Fri: 3:00 PM – 10:00 PM
-                <br />
-                Sat: 9:00 AM – 4:00 PM
-                <br />
-                Sun: Closed
-              </li>
-            </ul>
+            <div className="mt-4 space-y-5 text-sm text-gray-400">
+              {/* Main campus */}
+              <div>
+                <p className="font-heading font-semibold text-primary-teal">📍 总院 Main Campus</p>
+                <p className="mt-1">Bayu Tinggi, Klang</p>
+                <p className="mt-0.5">
+                  ☎️{" "}
+                  <a href="tel:+60174896983" className="transition-colors hover:text-white">
+                    017-489 6983
+                  </a>
+                </p>
+              </div>
+              {/* Branch campus */}
+              <div>
+                <p className="font-heading font-semibold text-primary-teal">📍 分院 Branch Campus</p>
+                <p className="mt-1">巴生滨华独中校区旁</p>
+                <p className="mt-0.5">
+                  ☎️{" "}
+                  <a href="tel:+60177456983" className="transition-colors hover:text-white">
+                    017-745 6983
+                  </a>
+                </p>
+              </div>
+              {/* Hours */}
+              <div>
+                <p className="font-medium text-gray-300">营业时间 Hours</p>
+                <p className="mt-1">Mon–Fri: 3 PM – 10 PM</p>
+                <p>Sat: 9 AM – 4 PM | Sun: Closed</p>
+              </div>
+            </div>
           </div>
         </div>
 

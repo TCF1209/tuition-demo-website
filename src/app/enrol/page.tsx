@@ -7,6 +7,7 @@ import { buildEnrolMessage } from "@/lib/whatsapp";
 
 export default function EnrolPage() {
   const [name, setName] = useState("");
+  const [branch, setBranch] = useState("");
   const [level, setLevel] = useState("");
   const [selectedSubjects, setSelectedSubjects] = useState<string[]>([]);
   const [contact, setContact] = useState("");
@@ -31,6 +32,7 @@ export default function EnrolPage() {
     e.preventDefault();
     const url = buildEnrolMessage({
       name,
+      branch: branch || undefined,
       level,
       subjects: selectedSubjects,
       contact,
@@ -83,7 +85,31 @@ export default function EnrolPage() {
               />
             </div>
 
-            {/* 2. Level */}
+            {/* 2. Branch */}
+            <div className="mb-6">
+              <label htmlFor="branch" className={labelClass}>
+                校区 Campus
+              </label>
+              <select
+                id="branch"
+                required
+                value={branch}
+                onChange={(e) => setBranch(e.target.value)}
+                className={inputClass}
+              >
+                <option value="" disabled>
+                  — 请选择 Select —
+                </option>
+                <option value="总院 Main Campus (Bayu Tinggi, Klang)">
+                  总院 Main Campus — Bayu Tinggi, Klang
+                </option>
+                <option value="分院 Branch Campus (滨华独中校区旁)">
+                  分院 Branch Campus — 滨华独中校区旁
+                </option>
+              </select>
+            </div>
+
+            {/* 3. Level */}
             <div className="mb-6">
               <label htmlFor="level" className={labelClass}>
                 年级 Level

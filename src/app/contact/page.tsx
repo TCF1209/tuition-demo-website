@@ -4,25 +4,29 @@ import { motion } from "framer-motion";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
 
-const INFO_CARDS = [
+const BRANCHES = [
   {
-    icon: "📍",
-    titleCN: "地址",
-    titleEN: "Address",
-    content: "14A, Jalan Bayu Tinggi 1C, Taman Bayu Perdana, 41200 Klang, Selangor",
+    labelCN: "总院",
+    labelEN: "Main Campus",
+    address: "Bayu Tinggi, Klang",
+    phone: "017-489 6983",
+    phoneLink: "60174896983",
   },
+  {
+    labelCN: "分院",
+    labelEN: "Branch Campus",
+    address: "巴生滨华独中校区旁",
+    phone: "017-745 6983",
+    phoneLink: "60177456983",
+  },
+];
+
+const INFO_CARDS = [
   {
     icon: "🕐",
     titleCN: "营业时间",
     titleEN: "Hours",
     content: "Mon\u2013Fri: 3 PM\u201310 PM | Sat: 9 AM\u20134 PM | Sun: Closed",
-  },
-  {
-    icon: "📱",
-    titleCN: "电话 / WhatsApp",
-    titleEN: "Phone / WhatsApp",
-    content: "017-489 6983",
-    href: `https://wa.me/${WHATSAPP_NUMBER}`,
   },
   {
     icon: "⭐",
@@ -99,10 +103,38 @@ export default function ContactPage() {
       <section className="bg-surface py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Branch cards */}
+            {BRANCHES.map((branch, i) => (
+              <motion.div
+                key={branch.labelEN}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-40px" }}
+                variants={cardVariants}
+                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+              >
+                <span className="text-2xl mb-2 block">📍</span>
+                <h3 className="font-heading font-semibold text-text-primary">
+                  {branch.labelCN} {branch.labelEN}
+                </h3>
+                <p className="text-text-muted text-sm mt-1">{branch.address}</p>
+                <a
+                  href={`https://wa.me/${branch.phoneLink}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 mt-3 text-primary-teal font-heading text-sm hover:text-primary-dark transition-colors"
+                >
+                  📱 {branch.phone}
+                </a>
+              </motion.div>
+            ))}
+
+            {/* Other info cards */}
             {INFO_CARDS.map((card, i) => (
               <motion.div
                 key={card.titleEN}
-                custom={i}
+                custom={i + 2}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-40px" }}
@@ -113,20 +145,9 @@ export default function ContactPage() {
                 <h3 className="font-heading font-semibold text-text-primary">
                   {card.titleCN} {card.titleEN}
                 </h3>
-                {card.href ? (
-                  <a
-                    href={card.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-text-muted text-sm mt-1 block hover:text-primary-teal transition-colors"
-                  >
-                    {card.content}
-                  </a>
-                ) : (
-                  <p className="text-text-muted text-sm mt-1">
-                    {card.content}
-                  </p>
-                )}
+                <p className="text-text-muted text-sm mt-1">
+                  {card.content}
+                </p>
               </motion.div>
             ))}
           </div>
