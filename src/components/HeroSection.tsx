@@ -57,7 +57,7 @@ export function HeroSection() {
 
             {/* Body */}
             <motion.p variants={fadeUp} className="text-white/70 text-lg">
-              专为独中生设计 · 中一至中六 · 小班精英教学
+              专为独中生设计 · 初一至高三 · 小班精英教学
             </motion.p>
 
             {/* CTA Buttons */}
@@ -81,7 +81,7 @@ export function HeroSection() {
             {/* Floating badge */}
             <motion.div variants={fadeUp} className="mt-4">
               <span className="inline-block -rotate-3 animate-float bg-accent-lime text-dark-bg font-heading font-bold px-4 py-2 rounded-lg text-sm shadow-lg">
-                独中专属 Form 1–6
+                独中专属 初一至高三
               </span>
             </motion.div>
           </motion.div>

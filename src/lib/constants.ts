@@ -173,7 +173,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     nameCN: "张伟明",
     nameEN: "Wei Ming",
-    role: "中四学生 · Form 4 Student",
+    role: "高一学生 · Senior 1 Student",
     quoteCN: "老师们的教学方式让我真正理解了物理和化学，不再是死记硬背。成绩从C进步到A！",
     quoteEN: "The teachers helped me truly understand Physics and Chemistry. My grades improved from C to A!",
     initial: "张",
@@ -189,7 +189,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     nameCN: "林志豪",
     nameEN: "Zhi Hao",
-    role: "中六学生 · Form 6 Student",
+    role: "高三学生 · Senior 3 Student",
     quoteCN: "备考统考压力很大，但老师给了我很清晰的复习计划和策略，让我有信心面对考试。",
     quoteEN: "Exam prep was stressful, but the teachers gave me a clear revision plan and strategy. I felt confident going in.",
     initial: "林",
@@ -245,10 +245,10 @@ export const STATS = [
 ];
 
 export const LEVELS = [
-  { id: "f1", labelCN: "中一 F1", labelEN: "Form 1" },
-  { id: "f2", labelCN: "中二 F2", labelEN: "Form 2" },
-  { id: "f3", labelCN: "中三 F3", labelEN: "Form 3" },
-  { id: "f4", labelCN: "中四 F4", labelEN: "Form 4" },
-  { id: "f5", labelCN: "中五 F5", labelEN: "Form 5" },
-  { id: "f6", labelCN: "中六 F6", labelEN: "Form 6" },
+  { id: "j1", labelCN: "初一", labelEN: "Junior 1" },
+  { id: "j2", labelCN: "初二", labelEN: "Junior 2" },
+  { id: "j3", labelCN: "初三", labelEN: "Junior 3" },
+  { id: "s1", labelCN: "高一", labelEN: "Senior 1" },
+  { id: "s2", labelCN: "高二", labelEN: "Senior 2" },
+  { id: "s3", labelCN: "高三", labelEN: "Senior 3" },
 ];

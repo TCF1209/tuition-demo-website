@@ -9,8 +9,8 @@ type Filter = "all" | "lower" | "upper";
 
 const TABS: { id: Filter; label: string }[] = [
   { id: "all", label: "全部 All" },
-  { id: "lower", label: "初中 Lower Sec (F1–3)" },
-  { id: "upper", label: "高中 Upper Sec (F4–6)" },
+  { id: "lower", label: "初中 Junior (初一至初三)" },
+  { id: "upper", label: "高中 Senior (高一至高三)" },
 ];
 
 function LevelBadge({ level }: { level: Subject["level"] }) {

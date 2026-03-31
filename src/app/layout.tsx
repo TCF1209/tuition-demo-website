@@ -41,7 +41,7 @@ const notoSansSC = Noto_Sans_SC({
 export const metadata: Metadata = {
   title: "MH Learning Centre 满汉全习 | Where Results Begin",
   description:
-    "专为独中生设计的补习中心。中一至中六，小班精英教学。数学、科学、语文等14个科目。A tuition centre designed for independent school students, Form 1–6.",
+    "专为独中生设计的补习中心。初一至高三，小班精英教学。数学、科学、语文等14个科目。A tuition centre designed for independent school students, Junior 1 to Senior 3.",
   keywords: ["tuition", "补习", "独中", "MH Learning Centre", "满汉全习", "Malaysia"],
 };
 
