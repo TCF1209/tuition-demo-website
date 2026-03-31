@@ -41,9 +41,6 @@ function TestimonialCard({ t }: { t: (typeof TESTIMONIALS)[number] }) {
 }
 
 export function Testimonials() {
-  // Duplicate cards for seamless infinite loop
-  const items = [...TESTIMONIALS, ...TESTIMONIALS];
-
   return (
     <section className="bg-dark-bg py-20 overflow-hidden">
       {/* Header */}
@@ -60,11 +57,20 @@ export function Testimonials() {
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-16 bg-gradient-to-r from-dark-bg to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-16 bg-gradient-to-l from-dark-bg to-transparent" />
 
-        {/* Scrolling track */}
-        <div className="flex gap-6 animate-marquee group-hover:[animation-play-state:paused]">
-          {items.map((t, i) => (
-            <TestimonialCard key={`${t.nameEN}-${i}`} t={t} />
-          ))}
+        {/* Scrolling track — two identical sets side by side for seamless loop */}
+        <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+          {/* First set */}
+          <div className="flex gap-6 pr-6">
+            {TESTIMONIALS.map((t, i) => (
+              <TestimonialCard key={`a-${i}`} t={t} />
+            ))}
+          </div>
+          {/* Duplicate set for seamless loop */}
+          <div className="flex gap-6 pr-6">
+            {TESTIMONIALS.map((t, i) => (
+              <TestimonialCard key={`b-${i}`} t={t} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
