@@ -65,7 +65,7 @@ export default function CoursesPage() {
   return (
     <>
       {/* Page title */}
-      <section className="bg-dark-bg py-16">
+      <section className="bg-dark-bg pt-28 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-cn-serif text-4xl md:text-5xl text-white">
             课程
