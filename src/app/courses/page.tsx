@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { SUBJECTS, type Subject } from "@/lib/constants";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
@@ -53,8 +53,6 @@ const cardVariants = {
 
 export default function CoursesPage() {
   const [filter, setFilter] = useState<Filter>("all");
-  const gridRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(gridRef, { once: true, margin: "-60px" });
 
   const filtered = SUBJECTS.filter((s) => {
     if (filter === "all") return true;
@@ -97,8 +95,13 @@ export default function CoursesPage() {
           </div>
 
           {/* Grid */}
-          <div
-            ref={gridRef}
+          <AnimatePresence mode="wait">
+          <motion.div
+            key={filter}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={{ visible: { transition: { staggerChildren: 0.08 } }, hidden: {} }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {filtered.map((subject, i) => (
@@ -107,7 +110,7 @@ export default function CoursesPage() {
                 custom={i}
                 variants={cardVariants}
                 initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
+                animate="visible"
                 whileHover={{
                   y: -6,
                   boxShadow: "0 12px 32px -8px rgba(42, 191, 170, 0.25)",
@@ -140,7 +143,8 @@ export default function CoursesPage() {
                 </a>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
+          </AnimatePresence>
         </div>
       </section>
     </>
