@@ -46,7 +46,7 @@ export function WhatsAppFAB() {
 
   return (
     <motion.div
-      className="fixed bottom-6 right-6 z-50 flex flex-col-reverse items-center gap-3"
+      className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3"
       initial={{ y: 80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" as const }}
