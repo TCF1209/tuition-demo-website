@@ -67,7 +67,7 @@ function GeometricRings({ className }: { className?: string }) {
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center bg-dark-bg grain-overlay overflow-hidden">
+    <section className="relative min-h-[85vh] lg:min-h-screen flex items-start lg:items-center bg-dark-bg grain-overlay overflow-hidden">
       {/* Mesh gradient background */}
       <div className="mesh-gradient animate-mesh-breathe absolute inset-0" />
 
@@ -85,7 +85,7 @@ export function HeroSection() {
       </motion.div>
 
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28 pb-16 lg:py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-16 lg:py-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"
