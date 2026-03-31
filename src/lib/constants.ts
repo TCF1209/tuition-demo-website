@@ -50,6 +50,7 @@ export interface Teacher {
   bioCN: string;
   bioEN: string;
   initial: string;
+  image?: string;
 }
 
 export const TEACHERS: Teacher[] = [
@@ -65,6 +66,7 @@ export const TEACHERS: Teacher[] = [
     bioCN: "Alan老师以清晰的逻辑与生动的实验思维教授化学，让学生真正理解反应原理而非死记方程式。全国十大化学指导老师的荣誉证明了他的教学实力。",
     bioEN: "Teacher Alan brings crystal-clear logic and vivid experimental thinking to Chemistry. His national Top 10 Chemistry Teacher awards speak to his proven track record of student success.",
     initial: "A",
+    image: "/images/alan.png",
   },
   {
     nameCN: "Hector老师",
@@ -78,6 +80,7 @@ export const TEACHERS: Teacher[] = [
     bioCN: "Hector老师擅长将复杂的高数概念拆解为易懂的步骤，帮助理科生建立扎实的数学基础。全国十大高数指导老师，教学经验丰富。",
     bioEN: "Teacher Hector excels at breaking down complex advanced maths into manageable steps, building a rock-solid foundation for science stream students. A nationally recognised Top 10 teacher.",
     initial: "H",
+    image: "/images/hector.png",
   },
   {
     nameCN: "Austen老师",
@@ -91,6 +94,7 @@ export const TEACHERS: Teacher[] = [
     bioCN: "Austen老师以系统化的教学方法帮助文商科学生克服数学恐惧，清华硕士学历让他在教学上兼具深度与广度。",
     bioEN: "Teacher Austen uses a structured, step-by-step approach to help arts and commerce students overcome maths anxiety. His master's from Tsing Hua brings both depth and clarity to the classroom.",
     initial: "A",
+    image: "/images/austen.png",
   },
   {
     nameCN: "杨庆欣老师",
@@ -104,6 +108,7 @@ export const TEACHERS: Teacher[] = [
     bioCN: "杨老师善于以生活中的现象讲解物理原理，让抽象的力学与电学变得有趣易懂。曾在独中任教，深谙统考考点。",
     bioEN: "Teacher Yang brings physics to life through everyday phenomena, making abstract mechanics and electricity intuitive. With independent school teaching experience, she knows the UEC exam inside out.",
     initial: "杨",
+    image: "/images/杨庆欣.png",
   },
   {
     nameCN: "李恩慧老师",
@@ -117,6 +122,7 @@ export const TEACHERS: Teacher[] = [
     bioCN: "李老师拥有上海交大医学硕士的专业背景，以学术深度和清晰讲解帮助学生扎实掌握生物知识，从细胞到生态系统全面覆盖。",
     bioEN: "Teacher Lee's medical master's from Shanghai Jiao Tong brings genuine scientific depth to Biology. Her clear explanations cover everything from cell biology to ecosystems with precision.",
     initial: "李",
+    image: "/images/李恩慧.png",
   },
   {
     nameCN: "Isaac老师",
@@ -130,6 +136,7 @@ export const TEACHERS: Teacher[] = [
     bioCN: "Isaac老师擅长以条理清晰的方式教导数学与会计，帮助学生在数字科目中建立自信，从初中数学到高中簿记无缝衔接。",
     bioEN: "Teacher Isaac brings clarity and structure to both Mathematics and Accounting, helping students build confidence with numbers from junior maths all the way to senior bookkeeping.",
     initial: "I",
+    image: "/images/issac.png",
   },
   {
     nameCN: "Ms. Chew",
@@ -143,6 +150,7 @@ export const TEACHERS: Teacher[] = [
     bioCN: "Ms. Chew 是团队中最资深的英文老师之一，23年教学经验让她深谙学生的学习难点，专注语法、词汇与写作训练，对标 CEFR 标准。",
     bioEN: "With 23 years of experience, Ms. Chew is one of our most seasoned English teachers. She focuses on grammar, vocabulary and structured writing aligned with CEFR standards.",
     initial: "C",
+    image: "/images/ms_chew.png",
   },
   {
     nameCN: "潘保澹老师",
@@ -156,6 +164,7 @@ export const TEACHERS: Teacher[] = [
     bioCN: "潘老师是满汉全习资历最深的老师，29年教学生涯积累了丰富的教学智慧。台湾师大地理系出身，对地理学科有深厚的专业素养与独到的教学方法。",
     bioEN: "With 29 years of teaching — the most experienced on our team — Teacher Phua brings unmatched depth to Geography. A graduate of Taiwan Normal University's Geography department, his expertise is second to none.",
     initial: "潘",
+    image: "/images/潘保惠.png",
   },
 ];
 

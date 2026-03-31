@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import { TEACHERS, type Teacher } from "@/lib/constants";
 
 function TeacherCard({
@@ -30,11 +31,23 @@ function TeacherCard({
       {/* Avatar */}
       <motion.div
         whileHover={{ scale: 1.05 }}
-        className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-primary-teal to-primary-dark flex items-center justify-center mb-4 ring-4 ring-primary-teal/20 transition-shadow hover:ring-primary-teal/40"
+        className="w-20 h-20 mx-auto rounded-full mb-4 ring-4 ring-primary-teal/20 transition-shadow hover:ring-primary-teal/40 overflow-hidden"
       >
-        <span className="text-2xl font-bold text-white font-cn-serif">
-          {teacher.initial}
-        </span>
+        {teacher.image ? (
+          <Image
+            src={teacher.image}
+            alt={teacher.nameCN}
+            width={80}
+            height={80}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-primary-teal to-primary-dark flex items-center justify-center">
+            <span className="text-2xl font-bold text-white font-cn-serif">
+              {teacher.initial}
+            </span>
+          </div>
+        )}
       </motion.div>
 
       {/* Name */}
